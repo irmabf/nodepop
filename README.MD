@@ -25,7 +25,7 @@ En postman nos vamos a POST y en la url http://localhost:3000/users nos vamos a 
 	"password":"abcde1234"
 }
 
-Si todo ha ido correctamente, el servidor nos mandara un status 200 ok y si nos vamos a headers podremos extraer el valor del x-auth que necesitaremos para introducir anuncios o ver anuncios creados. Para el usuario anterior el x-auth es: 
+Si todo ha ido correctamente, al pulsar send, el servidor nos mandará un status 200 ok y si nos vamos a headers podremos extraer el valor del x-auth que necesitaremos para introducir anuncios o ver anuncios creados. Para el usuario anterior el x-auth es: 
 
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YTM2ZGJlNTEwZGIzYjA1ZmUwNzJmYTQiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTEzNTQ0Njc4fQ.C7PmVuF33hTTPHTmNvEu1XRyMy8zFzBlBOOEFDrVi9o
 
@@ -45,7 +45,7 @@ Ahora dentro, de la misma ruta vamos a body, raw, seleccionamos json en el dropd
 	"price":100
 }
 
-Si todo va bien debemos recibir un codigo status 200 y los datos introducidos se habrán guardado en la bbdd.
+Si todo va bien, al pulsar send debemos recibir un codigo status 200 y los datos introducidos se habrán guardado en la bbdd.
 
 ###Ver anuncios
 
