@@ -65,3 +65,6 @@ Thumbs.db
 
 # WebStorm
 .idea/
+
+# config.json file
+server/config/config.json
