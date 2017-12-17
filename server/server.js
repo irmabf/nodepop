@@ -45,14 +45,16 @@ app.get('/ads', authenticate, (req,res)=>{
 });
 
 /**Get ad by id */
-app.get('/ads/:id',(req,res)=>{
+app.get('/ads/:id',authenticate,(req,res)=>{
     var id = req.params.id;
 
    if (!ObjectID.isValid(id)){
        return res.status(404).send();
    }
 
-   Ad.findById(id).then((ad)=>{
+   Ad.findOne({
+       _id:id
+   }).then((ad)=>{
         if(!ad){
             return res.status(404).send();
         }
@@ -65,14 +67,17 @@ app.get('/ads/:id',(req,res)=>{
 
 /**Get delete ads by id */
 
-app.delete('/ads/:id', (req, res)=>{
+app.delete('/ads/:id', authenticate,(req, res)=>{
     var id = req.params.id;
     
     if (!ObjectID.isValid(id)){
         return res.status(404).send();
     }
 
-    Ad.findByIdAndRemove(id).then((ad)=>{
+    Ad.findOneAndRemove({
+        _id:id,
+        _seller:req.user._id
+    }).then((ad)=>{
         if (!ad){
             return res.status(404).send();
         }
